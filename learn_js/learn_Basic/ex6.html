@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li{
+            cursor: pointer;
+        }
+        ul{
+            display: flex;
+            justify-content: space-around;
+            list-style-type: none;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>one</li>
+        <li>two</li>
+        <li><a href="ex4.html"> three </a></li>
+    </ul>
+    <div class="content">
+        <div>ones</div>
+        <div>twos</div>
+        <div>threes</div>
+    </div>
+
+    <script>
+        let allSel = document.querySelectorAll("ul li");
+
+        let allDiv = document.querySelectorAll(".content div");
+        
+        allSel.forEach(function(ele){
+            ele.onclick = function(){
+
+                allSel.forEach(function(ele){
+                    ele.classList.remove("active");
+                    ele.style.color = "";
+                });
+
+                this.classList.add("active");
+                ele.style.color = "red";
+
+                allDiv.forEach(function(a){
+                    a.style.color = "red";
+                });
+            };
+        });
+        
+    </script>
+</body>
+</html>

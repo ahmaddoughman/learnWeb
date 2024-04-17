@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="d1" class="d11">hello ahmad</div>
+
+    <p id="num">15$</p>
+    <button type="button" onclick="multiple()">multiple</button>
+    <script>
+      // 1
+      let first_d1 = document.getElementById("d1");
+      console.log(first_d1);
+      first_d1.innerHTML = "hello sami";
+
+      let first_d11 = document.querySelector(".d11");
+      console.log(first_d11);
+
+      //2
+      let second_d2 = document.createElement("div");
+      let second_d2_text = document.createTextNode("image");
+      second_d2.classList.add("hero");
+
+      let second_d22 = document.createElement("img");
+      second_d22.src = "Capture.PNG";
+      second_d22.width = 100;
+      second_d22.setAttribute("class", "press");
+
+      let second_btn = document.createElement("button");
+      let second_btn_text = document.createTextNode("click");
+      second_btn.setAttribute("class", "btn");
+      second_btn.addEventListener("click", function () {
+        console.log("hello");
+        second_d2.style.color = "red";
+        first_d1.innerHTML = "hello ahmad doughman";
+      });
+
+      second_d2.appendChild(second_d2_text);
+      second_btn.appendChild(second_btn_text);
+      second_d2.appendChild(second_d22);
+      second_d2.appendChild(second_btn);
+      document.body.appendChild(second_d2);
+
+      //3
+      let x = 0;
+      function multiple() {
+        let num1 = document.getElementById("num").textContent;
+        let nums = parseFloat(num1.replace(/\$/g, ""));
+        x = nums * 2;
+        document.getElementById("num").textContent = x + "$";
+      }
+    </script>
+  </body>
+</html>

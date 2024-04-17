@@ -1,0 +1,99 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+/* slider start */
+.slider .item{
+    height: 100vh;
+    background-size: cover;
+}
+
+.slider .slide1{
+    background-image: url(../image/hero-slider-1.jpg);
+}
+.slider .slide2{
+    background-image: url(../image/hero-slider-2.jpg);
+}
+.slider .slide3{
+    background-image: url(../image/hero-slider-3.jpg);
+}
+
+.slider .caption{
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    width: 100%;
+}
+.slider .caption .title{
+    background: rgba(255, 255, 255, 0.5);
+    font-size: 60px;
+    padding: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    display: inline-block;
+}
+.slider .caption .desc{
+    font-size: 35px;
+    font-weight: 300;
+    margin: 20px 0px 10px;
+    color: #fff;
+}
+
+.slider .owl-dots {
+    position: absolute;
+    z-index: 100;
+    bottom: 50px;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+.slider .owl-dots button.owl-dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    margin: 0px 3px;
+    outline: none;
+    background: transparent;
+}
+.slider .owl-dots button.owl-dot.active{
+    background: #fff;
+}
+
+.slider .owl-carousel .owl-nav button.owl-prev, .slider .owl-carousel .owl-nav button.owl-next{
+    width: 50px;
+    height: 50px;
+    border-bottom: 4px solid #fff;
+    border-left: 4px solid #fff;
+    position: absolute;
+    top: 50%;
+    text-indent: -60px;
+    overflow: hidden;
+    outline: none;
+    opacity: 0.5;
+    transition: all ease 0.5s;
+}
+.slider .owl-carousel .owl-nav button.owl-prev{
+    left: -30px;
+    transform: translateY(-50%) rotate(45deg);
+}
+.slider .owl-carousel .owl-nav button.owl-next{
+    right: -30px;
+    transform: translateY(-50%) rotate(-135deg);
+}
+.slider .owl-carousel:hover .owl-nav button.owl-prev{
+    left: 30px;
+}
+.slider .owl-carousel:hover .owl-nav button.owl-next{
+    right: 30px;
+}
+.slider{
+    overflow: hidden;
+}
+
+
+/* slider end */

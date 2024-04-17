@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div>
+        <button id="show">show</button>
+    </div>
+    
+    <script>
+        // example1 
+        function sayHola(name){
+            console.log(`hola ${name}`);
+        }
+        sayHola("ahmad");   
+
+        // example 2
+        function sayHola1(name){
+            return `hola ${name}`;
+        }
+        console.log(sayHola1("ali"));
+
+        // example 3
+        function calc(...number){
+            let result = 0;
+            for(let i = 0; i< number.length; i++){
+                result += number[i];
+            }
+            return `result = ${result}`;
+        }
+        document.write(calc(10,20,23,30));
+
+        // example 4
+        function showInfo(name="uk", age= "uk", price="uk"){
+            document.write(`<div>`);
+                document.write(`<h2>my name is ${name}</h2>`);
+                document.write(`<h2>my age is ${age}</h2>`);
+                document.write(`<h2>my price = $${price}</h2>`);
+            document.write(`</div>`);
+        }
+        showInfo("ahmad", 23, 12);
+
+        // example 5
+        function say(){
+            console.log("hiiiii");
+        }
+        document.getElementById("show").onclick = say();
+        
+
+        // example 6               Map function
+        let mynums =[1,2,3,4,5];
+
+        // 1st way
+        let newArray =[];
+        for(let i=0; i<mynums.length; i++){
+            newArray.push(mynums[i] + mynums[i]);
+        }
+        console.log(newArray);
+        // 2nd way
+        let addSelf = mynums.map(function(element){
+            return element + element;
+        }, 10);
+        console.log(addSelf);
+
+
+        // example 7 Arrow Function 
+        let addSelf1 = mynums.map((a) => a+a);
+        console.log(addSelf1);
+
+        // example 8
+        let first ="AhMaD doUGHmaN";
+        let first1 = first.split("") // split change string to array
+                    .map(function(ele){
+                        if(ele === ele.toUpperCase())
+                            return ele.toLowerCase();
+                        else
+                            return ele.toUpperCase();
+                    }
+                    ).join("");// join change array to string
+        console.log(first1);
+
+
+        // example 9            Filter function
+        let friends = ["ahmad", "samer", "rami", "ali"];
+        let filterFriends = friends.filter(function(a){
+            return a.startsWith("a");
+        });
+        console.log(filterFriends);
+        
+    
+    </script>
+</body>
+</html>

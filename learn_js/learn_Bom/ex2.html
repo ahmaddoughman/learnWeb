@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        console.log(location.href);
+
+        //ex1
+        //location.href = "https://google.com";
+
+        // ex2
+        console.log(location.host);
+        console.log(location.hostname);
+
+        // ex3
+        // setTimeout(function(){
+        //     window.open("https://google.com", "_blank", "width=400, height=400")
+        // },2000);
+        
+        // ex4    set
+        //1ST WAY   
+        window.localStorage.setItem("color","red");
+        //2nd way
+        window.localStorage.fontWeight = "bold";
+        //3rd way
+        window.localStorage["fontSize"] = "20px";
+
+        console.log(window.localStorage);
+
+        // ex5   get
+        console.log(window.localStorage.getItem("color"));
+        //2nd way
+        console.log(window.localStorage.color);
+        //3rd way
+        console.log(window.localStorage["color"]);
+
+        // ex7   remove one
+        window.localStorage.removeItem("color");
+
+        // ex8   remove All
+        window.localStorage.clear();
+
+        // ex6   set color to page
+        document.body.style.backgroundColor = window.localStorage.getItem("color");
+
+        
+
+
+
+    </script>
+</body>
+</html>

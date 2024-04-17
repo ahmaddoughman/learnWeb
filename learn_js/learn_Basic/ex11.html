@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      body {
+        height: 5000px;
+      }
+      #scrollToTopBtn {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="console.log('Clicked')">Button</button>
+    <button id="btn">Button1</button>
+    <button id="btn2">Button2</button>
+    <button id="btn3">Button3</button>
+    <button id="btn4">Button4</button>
+
+    <hr />
+    <form action="">
+      <input type="text" />
+      <input type="submit" value="submit data" />
+    </form>
+
+    <button id="scrollToTopBtn" onclick="scrollToTop()">Scroll to Top</button>
+    <script>
+      let mybtn = document.getElementById("btn");
+      mybtn.onclick = function () {
+        console.log("clicked heloo");
+      };
+
+      let mybtn2 = document.getElementById("btn2");
+      mybtn2.oncontextmenu = function () {
+        console.log("clicked 2");
+      };
+
+      let mybtn3 = document.getElementById("btn3");
+      mybtn3.onmouseenter = function () {
+        console.log("on clicked mouse entered");
+      };
+
+      let mybtn4 = document.getElementById("btn4");
+      mybtn4.onmouseleave = function () {
+        console.log("on clicked mouse leaved");
+      };
+
+      // ex1 to get top
+      var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+      // When the user scrolls down 2000px from the top of the document, show the button
+      window.onscroll = function () {
+        if (
+          document.body.scrollTop > 1000 ||
+          document.documentElement.scrollTop > 1000
+        ) {
+          scrollToTopBtn.style.display = "block";
+        } else {
+          scrollToTopBtn.style.display = "none";
+        }
+      };
+      // Function to scroll to the top when the button is clicked
+      function scrollToTop() {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+      }
+
+      
+
+    </script>
+  </body>
+</html>

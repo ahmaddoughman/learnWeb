@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="" method="get" id="register">
+      <input type="text" id="phone" name="the-phone" maxlength="15">
+      <input type="submit" value="Register">
+    </form>
+
+    <script>
+      // Regular expression
+      let myString = "hello Elzero Web School I Love elzero";
+      let regex = /elzero/ig;
+
+      console.log(myString.match(regex));
+
+      // ex2
+      let tld = "Com Net Org Info Code Io";
+      let tldRe = /(info|org|io)/i;
+      console.log(tld.match(tldRe));
+
+      // ex3
+      let nums = "12345678910";
+      let numsRe = /[0-9]/g;
+      console.log(nums.match(numsRe));
+
+      // ex3 b
+      let notnumsRe = /[^0-2]/g;
+      console.log(nums.match(notnumsRe));
+
+      // ex4
+      let specialNums = "1!2@3#4$5678910";
+      let specialNumsRe = /[^0-9]/g;
+      console.log(specialNums.match(specialNumsRe));
+
+       // ex4 b
+       let specialNums1 = "Os1 Os10s Os2 Os8 Os8Os";
+      let specialNumsRe1 = /Os[5-9]Os/g;
+      console.log(specialNums1.match(specialNumsRe1));
+
+      // ex5  \w get all character
+      let email = 'o@@@g..com O@g.com O@g.net A@Y.com O-g.com o@s.com 1@1.com'
+      let dot = /./g;
+      let word = /\w/g;
+      let valid = /\w@\w.(com|net)/g;
+
+      console.log(email.match(dot));
+      console.log(email.match(word));
+      console.log(email.match(valid));
+
+      //ex6 \b get word at beginning ore end of a word
+      let names = "sayed 1Spam 2Spam 3Spam Spam4 Osama Ahmad ASpam5";
+      let re = /(\bspam|spam\b)/ig;
+      console.log(names.match(re));
+      console.log(re.test(names));
+
+      // ex7
+      // \w+ get one or more character
+      let mails = "O@nn.sa ahmad@gmail.com ali@gmail.net osama@mail.ru"
+      let mailsRe = /\w+@\w+.(com|net)/ig;
+      console.log(mails.match(mailsRe));
+      
+      // \d* get zero ore more num
+      let num = "0110 10 150 05120 0560 350 00";
+      let numRe = /0\d*0/ig;
+      console.log(num.match(numRe));
+
+      // ? get zero or one
+      let urls = "https://google.com http://www.facebook.net web.com"
+      let urlsRe = /(https?:\/\/)?(www.)?\w+.\w+/ig;
+      console.log(urls.match(urlsRe));
+
+      // ex8
+      let serials = "S100S S3000S S40000S S500000S";
+      
+      console.log(serials.match(/s\d{3}s/ig)); // S[three num]S
+      console.log(serials.match(/s\d{4,5}s/ig)); // S[four or five numbers]S
+      console.log(serials.match(/s\d{4,}s/ig));// S[at least four num]S
+
+      /*  ex9    $  => end with somethimg
+                 ^  => start with somethimg
+                 ?=  => followed by somethimg
+                 ?!  => not followed by something */
+      let myString1 = "We love programing";
+      let names1 = "1OsamaZ 2AhmadZ 3Mohammad 4MoustafaZ 5GamalZ";
+
+      console.log(/ing$/ig.test(myString1));
+      console.log(/^we/ig.test(myString1));
+      console.log(names1.match(/\d\w{5}(?=Z)/ig));
+      console.log(names1.match(/\d\w{8}(?!Z)/ig));
+
+      // ex10
+      let txt = "We Love Programming And @ Because @ Is Amazing";
+      console.log(txt.replace("@", "JavaScript"));
+      console.log(txt.replaceAll("@", "JavaScript"));
+
+      console.log(txt.replaceAll(/@/ig, "javasc"));
+
+      // ex11  \s => make space
+      document.getElementById("register").onsubmit = function(){
+        let phoneInput = document.getElementById("phone").value;
+        let phoneRe = /\(\d{4}\)\s\d{3}-\d{4}/; // (1234) 567-8910   
+
+        let validationResult = phoneRe.test(phoneInput);
+        console.log(validationResult);
+
+        if(validationResult === false){
+          return false;
+        }
+        return true;
+      }
+
+      
+    </script>
+  </body>
+</html>

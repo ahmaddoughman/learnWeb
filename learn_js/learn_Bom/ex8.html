@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+
+    <script type="module" src="script1.js"></script>
+    <script type="module" src="app.js"></script>
+
+    <script>
+      let dateNow = new Date();
+      let birthday = new Date("Jun 14, 2000");
+      let dateDiff = dateNow - birthday;
+
+      console.log(dateDiff);
+      console.log(dateDiff / 1000 / 60 / 60 / 24 / 365.25); // mill    s   min  hour  day
+
+      console.log(dateNow);
+      console.log(dateNow.getTime()); // get time from 1970 till now in sec
+      console.log(dateNow.getDate());
+      console.log(dateNow.getFullYear());
+      console.log(dateNow.getMonth()); // start from 0 - 11
+      console.log(dateNow.getDay()); // number of day in week
+      console.log(dateNow.getHours());
+      console.log(dateNow.getMinutes());
+      console.log(dateNow.getSeconds());
+
+     
+    </script>
+  </body>
+</html>

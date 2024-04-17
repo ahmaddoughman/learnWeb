@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name = "description" content="This is our Online Courses"/>
+    <title>controls type</title>
+</head>
+<body>
+    <p>login <br></p>
+    <form action="" method="get">
+        <input type="hidden" value="id">
+        <div>
+            <!-- 
+                readonly use for read you can't change the data
+             -->
+            <label >Username</label>
+            <input type="text" required placeholder="Username"  name="user" value="Ahmad" readonly>
+        </div>
+        <div>
+            <label >lastname</label>
+            <input type="text" name="lastname" autofocus>
+        </div>
+        <div>
+            <label>Password</label>
+            <input type="password" required name="pass" minlength="6" maxlength="10">
+        </div>
+        <!--  
+            disabled used if you donot want to sent the email
+         -->
+        <div>
+            <label>email</label>
+            <input type="email" required value="ahmad@gmail.com" name="mail" disabled>
+        </div>
+        <div>
+            <label>Color</label>
+            <input type="color"  name="color">
+        </div>
+        <div>
+            <label>Range</label>
+            <input type="range" name="range" min="0" max="100" step="20" value="40">
+        </div>
+        <div>
+            <label>Number</label>
+            <input type="number"  name="number" min="0" max="10" step="1" value="0">
+        </div>
+
+        <!-- 
+            radio
+         -->
+        <div>
+            <div>
+                <input id="m" type="radio" name="gender" value="male" checked>
+                <label for="m">Male</label>
+            </div>
+            <div>
+                <input id="f" type="radio" name="gender" value="female">
+                <label for="f">Female</label>
+            </div>
+        </div>
+
+        <hr>
+        <!-- 
+            checkbox
+         -->
+        <div>
+            <div>
+                <input id="s" type="checkbox" name="hobies" value="swimming" checked >
+                <label for="s">swimming</label>
+            </div>
+            <div>
+                <input id="h" type="checkbox" name="hobies" value="hunting">
+                <label for="h">hunting</label>
+            </div>
+            <div>
+                <input id="d" type="checkbox" name="hobies" value="dancing">
+                <label for="d">dancing</label>
+            </div>
+        </div>
+    
+        <br>
+        <!-- 
+            select like comboBox
+         -->
+        <div>
+            <label for="book">choose your havorite book</label>
+            <select name="book" id="book" >
+                <optgroup label="Romantic Books">
+                    <option value="1">book 1</option>
+                    <option value="2">book 2</option>
+                    <option value="3">book 3</option>
+                </optgroup>
+                <optgroup label="Action Books">
+                    <option value="4" >book 4</option>
+                    <option value="5">book 5</option>
+                    <option value="6">book 6</option>
+                </optgroup>
+            </select>
+        </div>
+
+        <!-- 
+            textArea
+         -->
+        <hr>
+        <textarea name="subject" cols="30" rows="10" placeholder="test text"></textarea>
+        <br>
+        
+        <!-- 
+            file
+         -->
+         <div>
+            <label>Upload</label>
+            <input type="file">
+         </div>
+
+         <br>
+         <!-- 
+            search
+         -->
+         <div>
+            <label>Search</label>
+            <input type="search">
+         </div>
+
+         <!-- 
+            url
+         -->
+         <br>
+         <div>
+            <label>URL</label>
+            <input type="url">
+         </div>
+
+         <br>
+         <!-- 
+            date
+         -->
+         <div>
+            <label>Date</label>
+            <input type="date">
+         </div>
+
+         <br>
+         <!-- 
+            Month
+         -->
+         <div>
+            <label>Month</label>
+            <input type="month">
+         </div>
+
+         <br>
+         <!-- 
+            time
+         -->
+         <div>
+            <label>Time</label>
+            <input type="time">
+         </div>
+
+        <input type="submit"  value="save">
+        <input type="reset">
+        
+    </form>
+</body>
+</html>

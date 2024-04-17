@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        let x = "price";
+        // object
+        let user = {
+            // properties
+            theName : "ahmad",
+            theAge : 23,
+            "country of": "lebanon",
+            price: 100,
+
+            // method
+            sayHello: function(){
+                return `helllooo`;
+            },
+
+            doubleAge: function(){
+                return this.theAge *2;
+            },
+        };
+
+        console.log(user.theName);
+        console.log(user.theAge);
+        console.log(user[x]);
+
+        console.log(user["country of"]);
+
+        console.log(user.doubleAge());
+        console.log(user.sayHello());
+
+
+
+        // example 2
+        let user1 ={
+            name: "ahmAd",
+            age: 24,
+            skills: ["html", "css", "js"],
+            avalable: false,
+            address:{
+                ksa: "maka",
+                Egypt:{
+                    one: "cairo",
+                    two: "gaza",
+                },
+            },
+
+            //method
+            checkAv: function(){
+                if(user1.available === true){
+                    return `goood`;
+                }
+                else{
+                    return `bad`;
+                }
+            },
+        };
+
+        console.log(user1.name);
+        console.log(user1.age);
+
+        console.log(user1.skills);// 1st way
+        console.log(user1.skills.join(" ")); //2nd way
+        
+        console.log(user1.address.ksa);
+        console.log(user1.address.Egypt.one); // 1st way
+        console.log(user1["address"]["Egypt"]["one"]); // 2nd way
+        console.log(user1.checkAv());
+
+
+        // exercise 3
+        let user2 = new Object();
+        user2.grade = 99;
+        user2.names = "AHMAD";
+        user2.getName = function(){
+            return `hello ahmaddd`;
+        };
+        console.log(user2.names);
+        console.log(user2.grade);
+        console.log(user2.getName());
+
+        // example 4
+        let obj = Object.create(user);
+        obj.theAge = 50;
+        console.log(obj.doubleAge());
+
+    </script>
+</body>
+</html>

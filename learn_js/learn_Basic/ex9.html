@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+        let myElement = document.createElement("div");
+        let myAttr = document.createAttribute("data-custom");
+        let myText = document.createTextNode("Product one");
+        let myComment = document.createComment("This is div");
+
+        myElement.className = "product";
+        myElement.setAttributeNode(myAttr);
+        myElement.setAttribute("data-test", "Testing");
+        
+        // Append comment to element
+        myElement.appendChild(myComment);
+
+        // Append Text to element
+        myElement.appendChild(myText);
+
+        // Append Element to Body
+        document.body.appendChild(myElement);
+
+        console.log(myElement);
+
+
+        // ex2
+        let myMainElement = document.createElement("div");
+        let myHeading = document.createElement("h2");
+        let myParagraph = document.createElement("p");
+
+        let myHeadingText = document.createTextNode("heading 2");
+        let myParagraphText = document.createTextNode("paragraph");
+
+        // add heading text and paragraph
+        myHeading.appendChild(myHeadingText);
+        myParagraph.appendChild(myParagraphText);
+
+        // add heading and paragraph to mainElement
+        myMainElement.appendChild(myHeading);
+        myMainElement.appendChild(myParagraph);
+
+        myMainElement.className = "product";
+        document.body.appendChild(myMainElement);
+    </script>
+</body>
+</html>

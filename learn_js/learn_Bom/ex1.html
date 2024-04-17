@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>Stop time</button>
+    <div>10</div>
+    <script>
+        // ex1
+        // alert("test");
+
+        // //ex2
+        // let confirmMsg = confirm("Are you sure");
+        // console.log(confirmMsg);
+
+        // if(confirmMsg === true){
+        //     console.log("Item Deleted");
+        // }
+        // else{
+        //     console.log("Item not Deleted");
+        // }
+
+        // // ex3
+        // let promtMsg = prompt("Good day to you?", "enter day");
+        // console.log(promtMsg);
+
+        // ex4 setTime
+        setTimeout(sayMsg, 3000, "ahmad", 23);
+        function sayMsg(user, age){
+            console.log(`I am Message ${user} age ${age}`);
+        }
+  
+        // ex5 clearTime
+        let counter = setTimeout(sayMsg1, 3000);
+        function sayMsg1(){
+            console.log(`I am Message1`);
+        }
+        let btn = document.querySelector("button");
+        btn.onclick = function(){
+            clearTimeout(counter);
+        }
+
+        // ex6 setInterval
+        let div = document.querySelector("div");
+        function countdown(){
+            div.innerHTML -= 1;
+            if(div.innerHTML === "0"){
+                clearInterval(counter1);
+            }
+        }
+        let counter1 = setInterval(countdown, 1000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Online Courses </title>
+        <meta name = "description" content="This is our Online Courses"/>
+    </head>
+    <body>
+        <h1> heading 1</h1>
+        <p >Welcome to <strong> my </strong>  <b>site</b></p>
+
+        <!-- 3 types for table
+            thead
+            tbody
+            tfoot
+            tr = table row
+            td = table Data Cell
+            th = table header cell
+            colspan = merge two cell together
+         -->
+        <table border="1">
+            <caption>Student grade</caption>
+            <thead>
+                <tr>
+                    <th>name</th>
+                    <th>last</th>
+                    <th>grade</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>Ali</td>
+                    <td>ali</td>
+                    <td>60</td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td>Ahmad</td>
+                    <td>Doughman</td>
+                    <td>90</td>
+                </tr>
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <td colspan="2">total</td>
+                    <td>100</td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <!-- 
+            span = identify item
+            br = break
+            hr = horizontal ruller
+         -->
+        <p>hello <span>My </span> name is ahmad</p>
+        <p>Second paragraph <br> hi <br></p>
+        <hr >
+        
+        <div class="first">
+            <p>hello <span>My </span> name is ahmad</p>           
+            <p>Second paragraph <br> hi <br></p>
+         </div>
+
+         <!-- 
+            entities list
+          -->
+         <div>
+            <p>This is my &lt; p &gt; tag</p>
+         </div>
+    
+         <!-- audio -->
+         <audio controls>
+            <source src="audio/audio1140287205.m4a" type="audio/x-m4a">
+            Your browser does not support this audio tag
+         </audio>
+         <br>
+         <!-- video -->
+         <video controls width="700" height="400">
+            <source src="video/video1140287205.mp4" type="video/mp4">
+            Your browser does not support this video tag
+            <!-- track use to translate -->
+            <track src="my_file_en.vtt" kind="subtitles" srclang="eng" label="English">
+         </video>
+
+    </body>
+</html>

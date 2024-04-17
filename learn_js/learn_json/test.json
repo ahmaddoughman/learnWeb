@@ -1,0 +1,9 @@
+{
+    "string": "Ahmad",
+    "number": 100,
+    "object":{
+        "car" : "BMW",
+        "speed" : "130" 
+    },
+    "array":["HTML", "CSS", "JS"]
+}

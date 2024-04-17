@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p class="ppp">paragraph 1</p>
+    <p>paragraph 2</p>
+
+    <div id="my_div">div helllo</div>
+
+    <h1 class="my_h1">heading 1</h1>
+    <h2 class="mh2 special">heading 2</h2>
+
+    <img src="" alt="">
+
+    <form action="">
+        <input type="text" name="one" value="hello">
+    </form><br>
+    <form action="">
+        <input type="text" name="two" value="twohello">
+    </form>
+
+    <a class="link" href="www.google.com"> google</a>
+    
+    <script>
+        // ex1
+        let myDiv = document.getElementById("my_div");
+        console.log(myDiv);
+
+        // ex2
+        let myP = document.getElementsByTagName("p");
+        console.log(myP[0]);
+        myP[0].innerHTML = "test 1";
+
+        // ex3
+        let myh1 = document.getElementsByClassName("my_h1");
+        console.log(myh1[0]);
+        
+        // ex4
+        let mh2 = document.getElementsByClassName("mh2");
+        console.log(mh2[0]);
+
+        let myh2 = document.querySelector(".special");
+        console.log(myh2);
+        
+        // ex5
+        console.log(document.title);
+
+        //ex6
+        console.log(document.forms[0].one.value);
+
+        // ex7
+        document.images[0].src = "Capture.PNG";
+        document.images[0].width = 100;
+        document.images[0].id = "img1";
+
+        // ex8
+        let mylink = document.querySelector(".link");
+        console.log(mylink.getAttribute("href"));
+        mylink.setAttribute("href", "https://twitter.com");
+        
+        // ex9
+        let myP1 = document.getElementsByTagName("p")[0];
+        if(myP1.hasAttribute("class")){
+            if(myP1.getAttribute("class") === ""){
+                myP1.removeAttribute("class");
+            }
+             myP1.setAttribute("class", "new")
+             console.log("success");
+        }
+        else{
+            console.log("notfound");
+        }
+
+       
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      ul {
+        display: flex;
+        /* justify-content: space-around; */
+        justify-content: center;
+        gap: 50px;
+      }
+      li {
+        font-size: 30px;
+        list-style-type: none;
+      }
+      .active {
+        color: white;
+        background-color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>home</li>
+      <li>about</li>
+      <li>contact</li>
+      <li>login</li>
+    </ul>
+
+    <script>
+      let listItems = document.querySelectorAll("li");
+      listItems.forEach((item) => {
+        item.onclick = function () {
+          listItems.forEach((otherItem) => {
+            if (otherItem !== item) {
+              otherItem.classList.remove("active");
+            }
+          });
+          item.classList.add("active");
+        };
+      });
+      
+    </script>
+  </body>
+</html>

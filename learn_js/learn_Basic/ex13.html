@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            font-size: 30px;
+            line-height: 2;
+        }
+    </style>
+</head>
+<body>
+    <div id="my-div" class="one two show test">Div with many classes</div>
+
+    <div id="div2">Div Has <span>Span</span></div>
+    <script>
+        let element = document.getElementById("my-div");
+
+        // example DOM class list
+        console.log(element.classList);
+        console.log(typeof element.classList);
+
+        console.log(element.classList.contains("ahmad")); //to check if class found or not => return false
+        console.log(element.classList.contains("show")); // return true
+
+        console.log(element.classList.item("0")); // get first class
+
+        element.onclick = function(){
+            element.classList.add("add-one", "add-two");
+        }
+        element.onclick = function(){
+            element.classList.remove("add-one", "add-two");
+        }
+
+        element.onclick = function(){
+            element.classList.toggle("add-one"); // make add or remove
+        }
+
+        element.style.color = "red";
+        element.style.backgroundColor = "yellow";
+        // secondway
+        element.style.cssText ="font-weight: bold; color: green";
+
+        //
+        element.style.removeProperty("color");
+        element.style.setProperty("font-size", "40px", "important");
+
+        // remove style property from page style
+        document.styleSheets[0].rules[0].style.removeProperty("line-height");
+       // document.styleSheets[0].rules[0].style.setProperty("background-color", "blue");
+
+
+        // ex2 div2
+
+        let ahmad = document.getElementById("div2");
+        let createdP = document.createElement("p");
+        let createdPText = document.createTextNode("helllo paragraph");
+        createdP.appendChild(createdPText);
+
+        ahmad.before("hello from js");
+        ahmad.after(createdP);  
+
+        ahmad.append("Inside div");
+        ahmad.prepend("inside div");
+
+        
+    </script>
+</body>
+</html>

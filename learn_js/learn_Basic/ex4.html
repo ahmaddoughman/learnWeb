@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = ["ahmad", "ali", "sam"];
+        let arr1 = [1 , 2, 3];
+        console.log(`print array ${arr}`);
+
+        console.log(Array.isArray(arr));
+
+        console.log(arr.length);
+
+        arr.unshift("sami", "rami");
+        console.log(`print array ${arr}`);
+
+        arr.push("karim");
+        console.log(`print array ${arr}`);
+
+        arr.shift();
+        console.log(`print array ${arr}`);
+
+        let a = arr.pop();
+        console.log(`print array ${arr}`);
+
+        console.log(`get the name deleted ${a}`);
+
+        console.log(arr.indexOf("ahmad"));
+
+        console.log(arr.sort());
+        console.log(arr.reverse());
+
+        console.log(arr.concat(arr1)); // merge to array
+
+        for(let i =0; i < arr.length; i++ ){
+            document.write(arr[i] +" ");
+        }
+
+        for(let i =0; i < arr.length; i++ ){
+            console.log(`" " ${arr[i]}`);
+        }
+
+    </script>
+</body>
+</html>

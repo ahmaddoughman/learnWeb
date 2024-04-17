@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+        // Promise
+        
+      const myPromise = new Promise((resolveFunction, rejectFunction) => {
+        let connect = true;
+        if (connect) {
+          resolveFunction("Connection Established");
+        } else {
+          rejectFunction(Error("Connection Failed"));
+        }
+      });
+
+      console.log(myPromise);
+
+      myPromise.then(
+        (resolveValue) => console.log(`Good ${resolveValue}`),
+        (rejectValue) => console.log(`Bad ${rejectValue}`)
+      );
+
+      // ex2
+      const getData = (apiLink) => {
+        return new Promise((resolve, reject) => {
+          let myRequest = new XMLHttpRequest();
+          myRequest.onload = function () {
+            if (this.readyState === 4 && this.status === 200) {
+              resolve(JSON.parse(this.responseText));
+            } else {
+              reject(Error("No data found"));
+            }
+          };
+          myRequest.open("GET", apiLink);
+          myRequest.send();
+        });
+      };
+
+      getData("https://api.github.com/users/elzerowebschool/repos")
+        .then((result) => {
+          result.length = 10;
+          return result;
+        })
+        .then((result) => console.log(result[0].name))
+        .catch((rej) => console.log(rej));
+
+
+        // ex3
+        function checkData(){
+          let users = ["ahmad"];
+          if(users.length > 0){
+            return Promise.resolve("users found");
+          }
+          else{
+            return Promise.reject("No users found");
+          }
+        }
+        checkData().then(
+          (resolvedValue) => console.log(resolvedValue),
+          (rejectedValue) => console.log("Rejected "+ rejectedValue)
+        );
+        
+    </script>
+  </body>
+</html>

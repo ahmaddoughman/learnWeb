@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const user = {
+        name: "ahmad",
+        age: 23,
+        favorite: "develop",
+      };
+
+      const { name, age, favorite } = user;
+      console.log(name);
+      console.log(age);
+      console.log(favorite);
+
+      // ex2
+      const myObject = {
+        a: 1,
+        b: 2,
+      };
+      Object.defineProperty(myObject, "c", {
+        writable: true, // can change value if true
+        enumerable: true, // can use for loop
+        configurable: true, // can use delete
+        value: 3,
+      });
+      console.log(myObject);
+
+      myObject.c = 100;
+
+      console.log(myObject);
+
+      console.log(delete myObject.c);
+
+      for (let index in myObject) {
+        console.log(index, myObject[index]);
+      }
+
+      console.log(myObject);
+
+      //ex3
+      let array = [
+        {
+          id: 1,
+          text: "meeting",
+        },
+        {
+          id: 2,
+          text: "sport",
+        },
+      ];
+
+      // forEach
+      array.forEach(function (i) {
+        console.log(i.text);
+      });
+
+      // map
+      const tedo = array.map(function (i) {
+        return i.text;
+      });
+      console.log(tedo);
+
+      // filter
+      const tedo1 = array.filter(function (i) {
+        return i.id % 2 === 0;
+      });
+      console.log(tedo1);
+    </script>
+  </body>
+</html>

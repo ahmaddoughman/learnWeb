@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let theName = "ahmad";
+        
+        console.log(theName);
+
+        console.log(theName[0]);
+        console.log(theName.charAt(0));
+
+        console.log(theName.length);
+
+        let theName1 = "     ahmad    doughman  ";
+        console.log(theName1.trim()); // remove spaces
+
+        let a = "Elzero Web School";
+
+        console.log(a.indexOf("Web"));
+        console.log(a.indexOf("Web", 8));  
+
+        console.log(a.indexOf("o"));
+        console.log(a.lastIndexOf("o"));
+
+        console.log(a.slice(2,5));
+        console.log(a.repeat(2));
+        console.log(a.split(" "));
+
+        console.log(a.includes("Web")); // true
+
+        console.log(a.startsWith("")); // true => if you want to check if start with string 
+
+        let price = 0;
+        console.log(`price is ${price || 200}`); // 200
+        console.log(`price is ${price ?? 200}`); // 0
+
+        
+
+
+
+
+    </script>
+</body>
+</html>

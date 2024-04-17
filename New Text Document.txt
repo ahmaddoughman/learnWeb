@@ -1,0 +1,68 @@
+function updateUser(field, value){
+            $.ajax({
+                url: 'http://localhost/food_website/update_user.php',
+                type: 'post',
+                data: {
+                    field: field,
+                    value: value
+                },
+                contentType: 'application/json',
+                dataType: "json",
+                success: function(response) {
+                    if (response.success) {
+                        alert("Update successful");
+                    } else {
+                        alert("Update failed. " + response.message);
+                    }
+                },
+                error: function() {
+                    alert("Error processing the update request");
+                }
+            })
+        }
+
+
+2nd way
+function updateUser(field, value) {
+    fetch('http://localhost/food_website/update_user.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            field: field,
+            value: value
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert("Update successful");
+        } else {
+            alert("Update failed. " + data.message);
+        }
+    })
+    .catch(error => {
+        alert("Error processing the update request");
+        console.error('Error:', error);
+    });
+}
+
+3rd way 
+function updateUser(field, value) {
+    axios.post('http://localhost/food_website/update_user.php', {
+        field: field,
+        value: value
+    })
+    .then(response => {
+        if (response.data.success) {
+            alert("Update successful");
+        } else {
+            alert("Update failed. " + response.data.message);
+        }
+    })
+    .catch(error => {
+        alert("Error processing the update request");
+        console.error('Error:', error);
+    });
+}

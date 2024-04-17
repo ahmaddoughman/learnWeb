@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input type="text" name="name" id="name_task">
+        <input type="button" class="set_task" value="Add Task">
+    </div>
+    <div class="get_task"></div>
+    
+    <script>
+        let nameInput = document.querySelector("#name_task");
+        let btnSet = document.querySelector(".set_task");
+        let getTaskDiv = document.querySelector(".get_task");
+        
+        //window.localStorage.clear();
+
+        btnSet.onclick = function() {
+            
+            // Check if the input is not empty before storing in localStorage
+            if (nameInput.value.trim() !== "") {
+                window.localStorage.setItem("name", nameInput.value);
+                getTaskDiv.textContent = "Task added: " + nameInput.value;
+            } else {
+                getTaskDiv.textContent = "Please enter a task before adding.";
+            }
+        };
+    </script>
+</body>
+</html>
